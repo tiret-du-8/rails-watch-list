@@ -1,0 +1,10 @@
+<%= simple_form_for list do |f| %>
+<div class="d-flex justify-content-start align-items-center">
+  <div class="mx-3">
+    <%= f.input :name, label: "New list's name" %>
+  </div>
+  <div class="mx-3">
+    <%= f.submit "Create list", class: "btn btn-primary mt-3" %>
+  </div>
+</div>
+<% end %>

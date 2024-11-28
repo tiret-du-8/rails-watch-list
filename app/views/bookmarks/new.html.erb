@@ -1,8 +1,2 @@
 <h1>Add a movie</h1>
-  <%= simple_form_for [@list, @bookmark] do |f| %>
-  <div class="d-flex">
-    <%= f.input :comment %>
-    <%= f.association :movie %>
-    <%= f.submit "Add movie", class: "btn btn-primary" %>
-</div>
-  <% end %>
+<%= render 'form', bookmark: @bookmark, list: @list %>

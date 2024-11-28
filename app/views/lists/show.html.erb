@@ -1,8 +1,33 @@
 <h1><%= @list.name %></h1>
-<ul>
+
+<%# link_to "Add a movie", new_list_bookmark_path(@list) %>
+<%= simple_form_for [@list, @bookmark] do |f| %>
+  <div class="d-flex justify-content-start align-items-center">
+    <div class="mx-3">
+      <%= f.association :movie %>
+    </div>
+    <div class="mx-3">
+      <%= f.input :comment %>
+    </div>
+    <div class="mx-3">
+      <%= f.submit "Add movie", class: "btn btn-primary mt-3" %>
+    </div>
+  </div>
+<% end %>
+
+<div class="d-flex justify-content-start align-content-between flex-wrap">
   <% @list.movies.each do |movie| %>
-    <li><%= movie.title %></li>
+      <div class="card m-2" style="width: 12rem;">
+        <img class="card-img-top" src="<%= movie.poster_url %>" alt="">
+        <div class="card-body d-flex flex-column justify-content-between">
+          <div>
+            <h5 class="card-title"><%= movie.title %></h5>
+            <div class="my-1"><span class="alert alert-secondary p-1"><%= movie.rating %></span></div>
+          </div>
+          <p class="card-text"><%= movie.overview %></p>
+        </div>
+      </div>
   <% end %>
-</ul>
-<%= link_to "Add a movie", new_list_bookmark_path(@list) %>
+</div>
+
 <%= link_to "Back to my lists", lists_path %>

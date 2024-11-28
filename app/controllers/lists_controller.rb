@@ -1,10 +1,12 @@
 class ListsController < ApplicationController
   def index
     @lists = List.all
+    @list = List.new()
   end
 
   def show
     @list = List.find(params[:id])
+    @bookmark = Bookmark.new()
   end
 
   def new
@@ -14,7 +16,7 @@ class ListsController < ApplicationController
 
   def create
     @list = List.create(list_params)
-    redirect_to list_path(@list)
+    redirect_to lists_path
   end
 
   private

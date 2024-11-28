@@ -1,0 +1,13 @@
+<%= simple_form_for [list, bookmark] do |f| %>
+  <div class="d-flex justify-content-start align-items-center">
+    <div class="mx-3">
+      <%= f.association :movie %>
+    </div>
+    <div class="mx-3">
+      <%= f.input :comment %>
+    </div>
+    <div class="mx-3">
+      <%= f.submit "Add movie", class: "btn btn-primary mt-3" %>
+    </div>
+  </div>
+<% end %>
