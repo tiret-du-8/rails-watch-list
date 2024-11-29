@@ -5,9 +5,6 @@ puts "Cleaning database..."
 Movie.destroy_all
 List.destroy_all
 
-# List.create(name: "Very Best Of")
-# List.create(name: "Christmas Movies")
-
 url = "http://tmdb.lewagon.com/movie/top_rated"
 10.times do |i|
   puts "Importing movies from page #{i + 1}"

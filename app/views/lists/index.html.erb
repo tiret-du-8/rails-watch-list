@@ -1,16 +1,33 @@
-<%= cl_image_tag("myke-simon-atsUqIm3wxo-unsplash_z6fwzb",
-      width: 1920, height: 250, crop: :fill) %>
+<%= cl_image_tag("movie_banner", width: 1920, height: 250, crop: :fill) %>
+
+<%# <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(#);">
+  <div class="container">
+    <h1>Movie time</h1>
+  </div>
+</div> %>
+
 <div class="p-3">
-  <h1>My lists</h1>
+  <%# <h1>My lists</h1> %>
 
   <div class="d-flex">
     <div class="col-9 d-flex justify-content-start align-content-between flex-wrap">
       <% @lists.each do |list| %>
           <div class="card shadow mb-3 bg-white rounded m-2" style="width: 30%;">
+            <% if list.photo.attached? %>
+              <div class="card-image"
+                style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+                url('<%= cl_image_path list.photo.key %>')">
+              <%# cl_image_tag list.photo.key %>
+              <h5 class="card-title text-white"><%= list.name %></h5>
+              </div>
+            <% else %>
+              <div class="card-image"
+                style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+                url('<%= cl_image_path 'coffee' %>')">
+                <h5 class="card-title"><%= list.name %></h5>
+              </div>
+            <% end %>
             <div class="card-body d-flex flex-column justify-content-between">
-              <h5 class="card-title"><%= list.name %></h5>
-              <%= cl_image_tag list.photo.key %>
-
               <div>
                 <ul>
                   <% list.movies.each do |movie| %>
@@ -30,6 +47,7 @@
 
     <%# link_to "Add a list", new_list_path %>
     <div class="col-3 card shadow p-3 mb-3 bg-white rounded">
+      <h3>Add a new list</h3>
       <%= render 'form', list: @list %>
     </div>
   </div>

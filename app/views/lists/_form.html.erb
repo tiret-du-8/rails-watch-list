@@ -1,11 +1,7 @@
 <%= simple_form_for list do |f| %>
 <%# <div class="d-flex justify-content-start align-items-center"> %>
-  <div class="mx-3">
-    <%= f.input :name, label: false, placeholder: "New list's name" %>
-  </div>
-  <%= f.input :photo, as: :file %>
-  <div class="mx-3">
-    <%= f.submit "Create list", class: "btn btn-primary mt-3" %>
-  </div>
+  <%= f.input :name, label: false, placeholder: "New list's name" %>
+  <%= f.input :photo, as: :file, label: "Pimp your list" %>
+  <%= f.submit "Create list", class: "btn btn-primary mt-3" %>
 <%# </div> %>
 <% end %>
