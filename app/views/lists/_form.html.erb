@@ -3,6 +3,7 @@
   <div class="mx-3">
     <%= f.input :name, label: false, placeholder: "New list's name" %>
   </div>
+  <%= f.input :photo, as: :file %>
   <div class="mx-3">
     <%= f.submit "Create list", class: "btn btn-primary mt-3" %>
   </div>
