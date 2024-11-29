@@ -1,7 +1,10 @@
-<%= simple_form_for list do |f| %>
-<%# <div class="d-flex justify-content-start align-items-center"> %>
-  <%= f.input :name, label: false, placeholder: "New list's name" %>
-  <%= f.input :photo, as: :file, label: "Pimp your list" %>
-  <%= f.submit "Create list", class: "btn btn-primary mt-3" %>
-<%# </div> %>
-<% end %>
+<div class="text-white">
+  <h3>Add a new list</h3>
+  <%= simple_form_for list do |f| %>
+  <%# <div class="d-flex justify-content-start align-items-center"> %>
+    <%= f.input :name, label: false, placeholder: "New list's name" %>
+    <%= f.input :photo, as: :file, label: "Pimp your list" %>
+    <%= f.submit "Create list", class: "btn btn-purple" %>
+  <%# </div> %>
+  <% end %>
+</div>

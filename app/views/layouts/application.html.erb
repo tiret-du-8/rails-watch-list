@@ -12,6 +12,24 @@
   </head>
 
   <body>
+      <div class="navbar navbar-expand-sm navbar-light sticky-top navbar-lewagon design-aukera">
+        <div class="container-fluid">
+          <a class="navbar-brand text-white ms-5" style="font-size: 40px" href="<%= lists_path %>">Aukera</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-5">
+                <li class="nav-item">
+                  <%# <a class="nav-link text-white" href="<%=lists_path">Home</a> %>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-white" href="<%=new_list_path%>">Add a list</a>
+                </li>
+            </ul>
+          </div>
+        </div>
+      </div>
     <%= yield %>
   </body>
 </html>

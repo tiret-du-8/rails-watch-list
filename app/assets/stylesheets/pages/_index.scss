@@ -1,8 +1,102 @@
 // Import page-specific CSS files here.
 @import "home";
 
+// $purple: rgba(97, 0, 114, 0.612);
+$purple: rgba(83, 0, 98, 0.802);
+$box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.179);
+
+body {
+  font-family: "Funnel Display", sans-serif;
+  background-color: rgba(0, 0, 0, 0.906)
+}
+
+h2, h3, h4, h5 {
+  font-family: "Funnel Display", sans-serif;
+}
+
+h6 {
+  font-weight: lighter;
+}
+
+.container {
+  max-width: 70%;
+  // margin-top: 50px;
+}
+
+.list-form-card {
+  border-top: none;
+  border-left: none;
+  border-bottom: solid 1px $purple;
+  border-right: solid 1px $purple;
+  border-radius: 10px;
+  background-image: linear-gradient(-135deg, $purple 0%, rgba(0, 0, 0, 0) 50%);
+  background-color: transparent;
+  box-shadow: $box-shadow;
+}
+
+.list-card {
+  border-top: none;
+  border-left: none;
+  // border-bottom: solid 1px $purple;
+  // border-right: solid 1px $purple;
+  border-radius: 10px;
+  background-color: transparent;
+  box-shadow: $box-shadow;
+}
+
+.movie-card {
+  border-top: none;
+  border-left: none;
+  // border-bottom: solid 1px $purple;
+  // border-right: solid 1px $purple;
+  border-radius: 10px;
+  background-color: transparent;
+  box-shadow: $box-shadow;
+  color: whitesmoke;
+  background-size: cover;
+  background-position: center;
+  padding: 5%;
+  display: inline-block;
+}
+
+.scroll {
+  overflow: auto;
+  white-space: nowrap;
+}
+
+.card-text {
+  white-space: wrap;
+}
+
+.btn-purple {
+  background-color: $purple;
+  color: whitesmoke;
+  box-shadow: $box-shadow;
+  border-radius: 5px;
+}
+
+.btn-purple:hover {
+  color: whitesmoke;
+}
+
+.form {
+  background-color: transparent;
+  border: none;
+}
+
+.form-item {
+  margin-right: 24px;
+}
+
 .card-image {
-  height: 100px;
+  height: 180px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+}
+
+.card-image-banner {
+  height: 200px;
   background-size: cover;
   background-position: center;
 }
@@ -10,4 +104,25 @@
 h5 {
   padding: 40px;
   text-align: center;
+}
+
+h1 {
+  padding-bottom: 20px;
+}
+
+.banner {
+  display: block;
+  padding-top: 40px;
+}
+
+.sticky-offset-form-list {
+  top: 130px;
+}
+
+.design-aukera {
+  height: 75px;
+  box-shadow: $box-shadow;
+  background: none;
+  // background-image: linear-gradient(-135deg, $purple 50%, rgba(0, 0, 0, 0) 100%);
+  background-image: linear-gradient(200deg, $purple 50%, rgba(0,0,0,0) 75%);
 }
